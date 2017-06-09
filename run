@@ -1,0 +1,4 @@
+#!/bin/bash
+cd libft-unit-test
+./run
+cd ../

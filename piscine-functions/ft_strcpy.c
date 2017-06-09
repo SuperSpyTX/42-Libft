@@ -6,20 +6,21 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/11 01:18:58 by jkrause           #+#    #+#             */
-/*   Updated: 2017/04/11 23:08:50 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/08 16:41:25 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-char		*ft_strcpy(char *dest, char *src)
+char		*ft_strcpy(char *dst, const char *src)
 {
-	int c;
+	size_t c;
 
 	c = 0;
 	while (src[c] > 0)
 	{
-		dest[c] = src[c];
+		dst[c] = src[c];
 		c++;
 	}
-	dest[c] = '\0';
-	return (dest);
+	dst[c] = '\0';
+	return (dst);
 }

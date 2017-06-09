@@ -6,35 +6,35 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/13 03:19:13 by jkrause           #+#    #+#             */
-/*   Updated: 2017/04/13 16:51:52 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/08 16:42:24 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include <stdio.h>
-#include <stdlib.h>
+/** TODO: Figure out if I should use this or not.
+**int					ft_strlen(char *src)
+**{
+**	int i;
+**
+**	i = 0;
+**	while (*(src + i) != '\0')
+**		i++;
+**	return (i);
+**}
+*/
 
-int					ft_strlen(char *src)
+char				*ft_strdup(const char *s1)
 {
-	int i;
+	size_t		size;
+	size_t		i;
+	char		*newstr;
 
-	i = 0;
-	while (*(src + i) != '\0')
-		i++;
-	return (i);
-}
-
-char				*ft_strdup(char *src)
-{
-	int		size;
-	int		i;
-	char	*newstr;
-
-	size = ft_strlen(src);
+	size = ft_strlen(s1);
 	newstr = (char*)malloc(size + 1);
 	if (!newstr)
 		return (0);
 	i = -1;
 	while (++i < size)
-		newstr[i] = *(src + i);
+		newstr[i] = *(s1 + i);
 	return (newstr);
 }

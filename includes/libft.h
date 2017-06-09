@@ -6,7 +6,7 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/06 20:58:23 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/06 21:50:53 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/08 15:13:47 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,12 @@ char				*ft_strncpy(char *dst, const char *src, size_t len);
 char				*ft_strstr(const char *big, const char *little);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
+
+/*
+**
+** Money-printing functions
+**
+*/
 void				ft_putchar(char c);
 void				ft_putstr(char const *str);
 void				ft_putnbr(int nbr);
@@ -51,7 +57,6 @@ void				ft_putnbr(int nbr);
 ** Bonus functions
 **
 */
-
 
 /*
 **

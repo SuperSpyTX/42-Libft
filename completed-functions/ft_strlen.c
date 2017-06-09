@@ -6,21 +6,17 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/07 14:03:14 by jkrause           #+#    #+#             */
-/*   Updated: 2017/04/07 15:35:13 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/08 16:46:03 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-int				ft_strlen(char *str)
+size_t				ft_strlen(const char *str)
 {
-	int		c;
-	char	*ref;
+	size_t		c;
 
 	c = 0;
-	ref = str + c;
-	while (*ref != '\0')
-	{
-		ref = str + c;
+	while (*str++)
 		c++;
-	}
 	return (c);
 }

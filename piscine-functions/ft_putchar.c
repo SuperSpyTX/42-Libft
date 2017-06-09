@@ -6,15 +6,14 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/09 17:59:30 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/06 21:53:31 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/08 14:30:09 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "libft.h"
 
-int				ft_putchar(char c)
+void				ft_putchar(char c)
 {
 	write(1, &c, 1);
-	return (0);
 }

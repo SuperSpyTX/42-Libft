@@ -6,12 +6,14 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/10 10:54:25 by jkrause           #+#    #+#             */
-/*   Updated: 2017/04/11 22:09:56 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/07 11:02:29 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-int					ft_putchar(char c);
-
+/*
+** TODO: REDO THIS FUCKING FUNCTION
+*/
 void				ft_putnbr(int nb)
 {
 	if (nb == -2147483648)

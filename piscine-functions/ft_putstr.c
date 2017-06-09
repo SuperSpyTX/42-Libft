@@ -6,22 +6,13 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/07 11:37:06 by jkrause           #+#    #+#             */
-/*   Updated: 2017/04/07 16:46:38 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/07 10:56:56 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-int				ft_putchar(char *c);
-
-void			ft_putstr(char *str)
+void			ft_putstr(char const *str)
 {
-	int		curr;
-	char	*ref;
-
-	curr = 0;
-	ref = str + curr;
-	while (*ref != '\0')
-	{
-		ref = str + curr++;
-		ft_putchar(ref);
-	}
+	while(*str)
+		ft_putchar(*str++);
 }
