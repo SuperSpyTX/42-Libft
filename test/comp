@@ -1,0 +1,5 @@
+cd ../
+make re
+cd test
+gcc -L ../ -lft -I ../includes $1
+./a.out

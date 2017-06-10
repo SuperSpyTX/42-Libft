@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   atoi_main.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 01:18:58 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/09 14:14:52 by jkrause          ###   ########.fr       */
+/*   Created: 2017/06/09 15:46:15 by jkrause           #+#    #+#             */
+/*   Updated: 2017/06/09 18:18:01 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
+#include <stdio.h>
 
-char		*ft_strcpy(char *dst, const char *src)
+int				main(int argc, char **argv)
 {
-	size_t c;
-
-	c = 0;
-	while (src[c] != 0)
-	{
-		dst[c] = src[c];
-		c++;
-	}
-	dst[c] = '\0';
-	return (dst);
+	printf("FT:%d", ft_atoi(" 2147483647"));
+	printf("\nC:%d\n", atoi("2147483647"));
+	printf("FT:%d\n", ft_atoi("\e06050"));
+	printf("C:%d\n", atoi("\e06050"));
 }
+

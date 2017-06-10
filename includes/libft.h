@@ -6,7 +6,7 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/06 20:58:23 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/08 15:13:47 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/09 15:38:11 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,6 @@ void				ft_putnbr(int nbr);
 ** Personal functions
 **
 */
-
+int				is_whitespace(const char c);
 
 #endif

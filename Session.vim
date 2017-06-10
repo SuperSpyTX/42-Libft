@@ -3,28 +3,29 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Documents/42/libft
+cd ~/Documents/42/libft/personal-functions
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +38 Makefile
-badd +2 piscine-functions/ft_atoi.c
-badd +1 piscine-functions/ft_putchar.c
-badd +1 piscine-functions/ft_putnbr.c
-badd +1 piscine-functions/ft_putstr.c
-badd +1 piscine-functions/ft_strcmp.c
-badd +1 piscine-functions/ft_strcpy.c
-badd +1 piscine-functions/ft_strdup.c
-badd +8 piscine-functions/ft_strlen.c
-badd +1 piscine-functions/ft_strncmp.c
-badd +1 piscine-functions/ft_strncpy.c
-badd +1 piscine-functions/ft_strstr.c
-badd +1 includes/libft.h
+badd +38 ~/Documents/42/libft/Makefile
+badd +1 ~/Documents/42/libft/piscine-functions/ft_putchar.c
+badd +1 ~/Documents/42/libft/piscine-functions/ft_putnbr.c
+badd +1 ~/Documents/42/libft/piscine-functions/ft_putstr.c
+badd +1 ~/Documents/42/libft/piscine-functions/ft_strcmp.c
+badd +1 ~/Documents/42/libft/piscine-functions/ft_strcpy.c
+badd +1 ~/Documents/42/libft/piscine-functions/ft_strdup.c
+badd +8 ~/Documents/42/libft/piscine-functions/ft_strlen.c
+badd +1 ~/Documents/42/libft/piscine-functions/ft_strncmp.c
+badd +1 ~/Documents/42/libft/piscine-functions/ft_strncpy.c
+badd +1 ~/Documents/42/libft/piscine-functions/ft_strstr.c
+badd +1 ~/Documents/42/libft/includes/libft.h
+badd +7 is_whitespace.c
+badd +1 ~/Documents/42/libft/completed-functions/ft_atoi.c
 argglobal
 silent! argdel *
 set stal=2
-edit includes/libft.h
+edit ~/Documents/42/libft/includes/libft.h
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -40,12 +41,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 55 - ((36 * winheight(0) + 18) / 37)
+let s:l = 67 - ((66 * winheight(0) + 40) / 80)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-55
-normal! 02|
+67
+normal! 0
 lcd ~/Documents/42/libft
 tabedit ~/Documents/42/libft/Makefile
 set splitbelow splitright
@@ -63,12 +64,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 22 - ((21 * winheight(0) + 18) / 37)
+let s:l = 32 - ((31 * winheight(0) + 40) / 80)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-22
-normal! 08|
+32
+normal! 014|
 lcd ~/Documents/42/libft
 tabedit ~/Documents/42/libft/piscine-functions/ft_strstr.c
 set splitbelow splitright
@@ -86,12 +87,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 24 - ((23 * winheight(0) + 18) / 37)
+let s:l = 24 - ((23 * winheight(0) + 40) / 80)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 24
-normal! 09|
+normal! 0
 lcd ~/Documents/42/libft
 tabedit ~/Documents/42/libft/piscine-functions/ft_strncpy.c
 set splitbelow splitright
@@ -109,12 +110,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 17 - ((4 * winheight(0) + 18) / 37)
+let s:l = 19 - ((11 * winheight(0) + 40) / 80)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-17
-normal! 0
+19
+normal! 022|
 lcd ~/Documents/42/libft
 tabedit ~/Documents/42/libft/piscine-functions/ft_strncmp.c
 set splitbelow splitright
@@ -132,12 +133,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 18 - ((9 * winheight(0) + 18) / 37)
+let s:l = 18 - ((17 * winheight(0) + 40) / 80)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 18
-normal! 08|
+normal! 0
 lcd ~/Documents/42/libft
 tabedit ~/Documents/42/libft/piscine-functions/ft_strlen.c
 set splitbelow splitright
@@ -155,12 +156,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 19 - ((9 * winheight(0) + 18) / 37)
+let s:l = 13 - ((12 * winheight(0) + 40) / 80)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-19
-normal! 015|
+13
+normal! 0
 lcd ~/Documents/42/libft
 tabedit ~/Documents/42/libft/piscine-functions/ft_strdup.c
 set splitbelow splitright
@@ -178,12 +179,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 36 - ((23 * winheight(0) + 18) / 37)
+let s:l = 39 - ((38 * winheight(0) + 40) / 80)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-36
-normal! 010|
+39
+normal! 023|
 lcd ~/Documents/42/libft
 tabedit ~/Documents/42/libft/piscine-functions/ft_strcpy.c
 set splitbelow splitright
@@ -201,12 +202,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 25 - ((24 * winheight(0) + 18) / 37)
+let s:l = 19 - ((18 * winheight(0) + 40) / 80)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-25
-normal! 013|
+19
+normal! 022|
 lcd ~/Documents/42/libft
 tabedit ~/Documents/42/libft/piscine-functions/ft_strcmp.c
 set splitbelow splitright
@@ -224,12 +225,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 14 - ((13 * winheight(0) + 18) / 37)
+let s:l = 15 - ((14 * winheight(0) + 40) / 80)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-14
-normal! 049|
+15
+normal! 0
 lcd ~/Documents/42/libft
 tabedit ~/Documents/42/libft/piscine-functions/ft_putstr.c
 set splitbelow splitright
@@ -247,7 +248,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 18) / 37)
+let s:l = 1 - ((0 * winheight(0) + 40) / 80)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -270,7 +271,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 22 - ((21 * winheight(0) + 18) / 37)
+let s:l = 22 - ((21 * winheight(0) + 40) / 80)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -293,37 +294,14 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 18) / 37)
+let s:l = 1 - ((0 * winheight(0) + 40) / 80)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 1
-normal! 0
+normal! 03|
 lcd ~/Documents/42/libft
-tabedit ~/Documents/42/libft/piscine-functions/ft_atoi.c
-set splitbelow splitright
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 18) / 37)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 0
-lcd ~/Documents/42/libft
-tabnext 2
+tabnext 3
 set stal=1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

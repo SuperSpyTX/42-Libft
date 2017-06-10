@@ -6,7 +6,7 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/13 03:19:13 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/08 16:42:24 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/09 14:09:18 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -36,5 +36,6 @@ char				*ft_strdup(const char *s1)
 	i = -1;
 	while (++i < size)
 		newstr[i] = *(s1 + i);
+	newstr[size] = '\0';
 	return (newstr);
 }

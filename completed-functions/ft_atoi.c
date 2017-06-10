@@ -6,49 +6,44 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/10 11:22:00 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/07 11:04:12 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/09 18:25:51 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
+#include <stdio.h>
 
-/*
-** TODO: PERSONAL FUNCTION DELEGATION
-*/
-int				ft_trim_space(char *str)
+static int		trim_space(const char *str)
 {
-	int i;
+	int		i;
 
 	i = 0;
-	while (str[i] == '\n' || str[i] == '\t' || str[i] == '\v' || str[i] == ' ')
-	{
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 		i++;
-	}
 	return (i);
 }
 
-/*
-** TODO: USE ENHANCED KNOWLEDGE FROM EXAM
-** TO UPDATE THIS FUNCTION
-*/
-int				ft_atoi(char *str)
+
+int				ft_atoi(const char *str)
 {
-	int		res;
-	int		len;
+	int		num;
+	int		i;
 	int		neg;
 
-	len = ft_trim_space(str);
-	res = 0;
-	if (*(str + len) == '-')
+	num = 0;
+	neg = 0;
+	i = trim_space(str) - 1;
+	if (str[i + 1] == '-')
 	{
+		i++;
 		neg = 1;
 	}
-	if (*(str + len) == '+')
+	while (str[++i])
 	{
-		neg = 0;
+		if (str[i] < '0' || str[i] > '9')
+			break;
+		num += str[i] - '0';
+		if (str[i + 1] >= '0' && str[i + 1] <= '9')
+			num *= 10;
 	}
-	while ((*(str + ++len) >= '0' && *(str + len) <= '9'))
-	{
-		res *= 10;
-		res += *(str + len) - '0';
-	}
-	return (neg == 1 ? -1 * res : res);
+	return (neg == 1 ? -num : num);
 }
