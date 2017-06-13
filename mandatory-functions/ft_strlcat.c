@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 11:14:28 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/09 19:14:49 by jkrause          ###   ########.fr       */
+/*   Created: 2017/06/11 20:08:04 by jkrause           #+#    #+#             */
+/*   Updated: 2017/06/12 19:23:12 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
-#include <stdio.h>
 
-char				*ft_strstr(const char *big, const char *little)
+/*
+size_t				ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int charsmud;
-	int i;
+	size_t				g;
+	size_t				k;
 
-	i = -1;
-	charsmud = 0;
-	while (big[++i] != '\0')
-	{
-
-	}
-	return (0);
-}
+	g = -1;
+	k = 0;
+	while (s1[++g] != '\0')
+		;
+	while (k < n && (s1[g++] = s2[k++]) != '\0')
+		;
+	return (s1);
+}*/

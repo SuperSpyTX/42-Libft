@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_whitespace.c                                    :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/09 15:14:12 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/11 02:33:13 by jkrause          ###   ########.fr       */
+/*   Created: 2017/04/11 01:18:58 by jkrause           #+#    #+#             */
+/*   Updated: 2017/06/11 02:30:17 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int				is_whitespace(const char c)
+char		*ft_strcpy(char *dst, const char *src)
 {
-	if (c == '\n' || c == '\t' || c == '\v' || c == ' ')
-		return (1);
-	return (0);
+	size_t c;
+
+	c = 0;
+	while (src[c] != 0)
+	{
+		dst[c] = src[c];
+		c++;
+	}
+	dst[c] = '\0';
+	return (dst);
 }

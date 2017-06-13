@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_whitespace.c                                    :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/09 15:14:12 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/11 02:33:13 by jkrause          ###   ########.fr       */
+/*   Created: 2017/04/07 11:37:06 by jkrause           #+#    #+#             */
+/*   Updated: 2017/06/11 04:54:06 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int				is_whitespace(const char c)
+void			ft_putstr(char const *str)
 {
-	if (c == '\n' || c == '\t' || c == '\v' || c == ' ')
-		return (1);
-	return (0);
+	ft_putstr_fd(str, 1);
 }

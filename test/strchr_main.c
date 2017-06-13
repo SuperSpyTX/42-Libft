@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   strchr_main.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/09 17:59:30 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/08 14:30:09 by jkrause          ###   ########.fr       */
+/*   Created: 2017/06/11 07:29:49 by jkrause           #+#    #+#             */
+/*   Updated: 2017/06/11 17:05:41 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
+#include <stdio.h>
 
-void				ft_putchar(char c)
+int				main(int argc, char **argv)
 {
-	write(1, &c, 1);
+	char *s1 = "\0";
+	char s2 = 'a';
+	printf("%s\n%s", ft_strrchr(s1, s2), strrchr(s1, s2));
 }
+

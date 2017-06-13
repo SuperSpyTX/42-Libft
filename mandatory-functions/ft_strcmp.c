@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_whitespace.c                                    :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/09 15:14:12 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/11 02:33:13 by jkrause          ###   ########.fr       */
+/*   Created: 2017/04/11 19:00:57 by jkrause           #+#    #+#             */
+/*   Updated: 2017/06/11 02:30:25 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int				is_whitespace(const char c)
+int				ft_strcmp(const char *s1, const char *s2)
 {
-	if (c == '\n' || c == '\t' || c == '\v' || c == ' ')
-		return (1);
-	return (0);
+	if (*s1 == *s2 && (*s2 || *s1))
+		return (ft_strcmp(s1 + 1, s2 + 1));
+	return ((unsigned char)(*s1) - (unsigned char)(*s2));
 }

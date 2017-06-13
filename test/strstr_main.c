@@ -6,14 +6,14 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/09 18:29:16 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/09 19:06:02 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/11 07:29:45 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-# define TEST_SUITE 4
+# define TEST_SUITE 7
 
 int				main(int argc, char **argv)
 {
@@ -21,7 +21,7 @@ int				main(int argc, char **argv)
 #if TEST_SUITE == 1
 	char *s2 = "FF";
 	char *s1 = "see F your F return FF now FF";
-	char *i1 = strstr(s1, s2);
+	char *i0 = strstr(s0, s2);
 	char *i2 = ft_strstr(s1, s2);
 #endif
 
@@ -56,6 +56,13 @@ int				main(int argc, char **argv)
 	char *s2 = s1;
 	char *i1 = strstr(s1, s1);
 	char *i2 = ft_strstr(s1, s1);
+#endif
+#if TEST_SUITE == 7
+	char *s1 = "MZIRIBMZIRIBMZE123";
+	char *s2 = "MZIRIBMZE";
+	size_t max = strlen(s2);
+	char *i1 = strnstr(s1, s2, max);
+	char *i2 = ft_strnstr(s1, s2, max);
 #endif
 #if TEST_SUITE == 0
 	char *s1 = "tes\test 2 e f g ";

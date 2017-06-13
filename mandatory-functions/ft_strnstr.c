@@ -1,22 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/07 14:03:14 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/08 16:46:03 by jkrause          ###   ########.fr       */
+/*   Created: 2017/06/11 06:45:15 by jkrause           #+#    #+#             */
+/*   Updated: 2017/06/11 07:14:40 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-size_t				ft_strlen(const char *str)
+char				*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t		c;
+	size_t charsmud;
+	size_t i;
 
-	c = 0;
-	while (*str++)
-		c++;
-	return (c);
+	i = -1;
+	if (little[0] == '\0')
+		return (char*)(big);
+	while (big[++i] != '\0')
+	{
+		charsmud = -1;
+		while (little[++charsmud] != '\0')
+		{
+			if ((i + charsmud) >= len)
+				break ;
+			if (little[charsmud] != big[i + charsmud])
+				break ;
+			if (little[charsmud + 1] == '\0')
+				return (char*)(big + i);
+		}
+	}
+	return (0);
 }

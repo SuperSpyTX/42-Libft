@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/07 11:37:06 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/07 10:56:56 by jkrause          ###   ########.fr       */
+/*   Created: 2017/04/10 10:54:25 by jkrause           #+#    #+#             */
+/*   Updated: 2017/06/11 04:53:48 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-void			ft_putstr(char const *str)
+void				ft_putnbr(int nb)
 {
-	while(*str)
-		ft_putchar(*str++);
+	ft_putnbr_fd(nb, 1);
 }

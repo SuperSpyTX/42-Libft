@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 01:18:58 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/09 14:15:50 by jkrause          ###   ########.fr       */
+/*   Created: 2017/04/07 14:03:14 by jkrause           #+#    #+#             */
+/*   Updated: 2017/06/08 16:46:03 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-char		*ft_strncpy(char *dest, const char *src, size_t len)
+size_t				ft_strlen(const char *str)
 {
-	size_t c;
+	size_t		c;
 
 	c = 0;
-	while (src[c] != 0 && c < len)
-	{
-		dest[c] = src[c];
+	while (*str++)
 		c++;
-	}
-	while (c < len)
-	{
-		dest[c] = '\0';
-		c++;
-	}
-	return (dest);
+	return (c);
 }
