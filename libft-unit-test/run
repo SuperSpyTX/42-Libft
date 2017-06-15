@@ -1,0 +1,7 @@
+#!/bin/bash
+cd ../
+make re
+cd libft-unit-test
+make clean
+make
+./run_test
