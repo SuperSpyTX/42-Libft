@@ -8,7 +8,7 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 Makefile
+badd +54 Makefile
 badd +1 includes/libft.h
 badd +1 inprogress-functions/ft_putchar_fd.c
 badd +1 inprogress-functions/ft_putnbr_fd.c
@@ -29,13 +29,18 @@ badd +17 mandatory-functions/ft_putendl_fd.c
 badd +29 mandatory-functions/ft_strnstr.c
 badd +21 mandatory-functions/ft_strchr.c
 badd +26 mandatory-functions/ft_strrchr.c
-badd +1 mandatory-functions/ft_strcat.c
-badd +44 mandatory-functions/ft_strlcat.c
+badd +5 mandatory-functions/ft_strcat.c
+badd +17 mandatory-functions/ft_strlcat.c
 badd +17 mandatory-functions/ft_strncat.c
 badd +20 mandatory-functions/ft_strcmp.c
 badd +1 mandatory-functions/ft_putchar_fd.c
 badd +18 mandatory-functions/ft_putstr_fd.c
-badd +0 mandatory-functions/ft_strcpy.c
+badd +1 mandatory-functions/ft_strcpy.c
+badd +17 inprogress-functions/ft_memalloc.c
+badd +21 inprogress-functions/ft_memdel.c
+badd +17 inprogress-functions/ft_strdel.c
+badd +19 inprogress-functions/ft_strnew.c
+badd +0 Makefile.m4
 argglobal
 silent! argdel *
 set stal=2
@@ -55,13 +60,13 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 41 - ((37 * winheight(0) + 40) / 80)
+let s:l = 51 - ((47 * winheight(0) + 40) / 80)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-41
+51
 normal! 0
-tabedit Makefile
+tabedit Makefile.m4
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -77,79 +82,13 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 45 - ((44 * winheight(0) + 40) / 80)
+let s:l = 23 - ((22 * winheight(0) + 40) / 80)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-45
-normal! 014|
-tabedit mandatory-functions/ft_strncat.c
-set splitbelow splitright
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 17 - ((16 * winheight(0) + 40) / 80)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-17
-normal! 05|
-tabedit mandatory-functions/ft_strlcat.c
-set splitbelow splitright
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 40) / 80)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 0
-tabedit mandatory-functions/ft_strcat.c
-set splitbelow splitright
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 3 - ((2 * winheight(0) + 40) / 80)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-3
-normal! 061|
-tabnext 5
+23
+normal! 08|
+tabnext 2
 set stal=1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
