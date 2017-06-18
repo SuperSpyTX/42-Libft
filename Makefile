@@ -21,7 +21,18 @@ CFLAGS = -Wall -Werror -Wextra -I $(INCLUDE)
 # -------------- Automated Variables ---------------- #
 # Fucking norm
 #SRC = $(wildcard $(addsuffix *.c, $(SRC_DIRS)))
-SRC = mandatory-functions/ft_strrchr.c \
+SRC = inprogress-functions/ft_strsplit.c \
+inprogress-functions/ft_striter.c \
+inprogress-functions/ft_striteri.c \
+inprogress-functions/ft_strmap.c \
+inprogress-functions/ft_strsub.c \
+inprogress-functions/ft_strtrim.c \
+inprogress-functions/ft_strequ.c \
+inprogress-functions/ft_strnequ.c \
+inprogress-functions/ft_strjoin.c \
+inprogress-functions/ft_strmapi.c \
+inprogress-functions/ft_atoll.c \
+mandatory-functions/ft_strrchr.c \
 mandatory-functions/ft_putstr.c \
 mandatory-functions/ft_strcmp.c \
 mandatory-functions/ft_strlcat.c \
@@ -52,6 +63,7 @@ mandatory-functions/ft_isalpha.c \
 mandatory-functions/ft_strcat.c \
 mandatory-functions/ft_tolower.c \
 mandatory-functions/ft_atoi.c \
+mandatory-functions/ft_strclr.c \
 mandatory-functions/ft_isprint.c \
 mandatory-functions/ft_strchr.c \
 personal-functions/is_whitespace.c \

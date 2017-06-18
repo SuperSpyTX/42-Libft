@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 19:00:57 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/16 14:38:21 by jkrause          ###   ########.fr       */
+/*   Created: 2017/06/16 13:02:24 by jkrause           #+#    #+#             */
+/*   Updated: 2017/06/16 14:28:57 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int				ft_strncmp(const char *s1, const char *s2, size_t n)
+void				ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	if (*s1 == *s2 && n > 1 && (*s1 || *s2))
-		return (ft_strncmp(s1 + 1, s2 + 1, n - 1));
-	return ((unsigned char)(*s1) - (unsigned char)(*s2));
+	int			i;
+
+	i = -1;
+	while (*s != '\0')
+		f(++i, s++);
 }

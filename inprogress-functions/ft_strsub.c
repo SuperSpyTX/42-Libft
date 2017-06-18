@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 19:00:57 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/16 14:38:21 by jkrause          ###   ########.fr       */
+/*   Created: 2017/06/16 15:07:17 by jkrause           #+#    #+#             */
+/*   Updated: 2017/06/16 16:47:02 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int				ft_strncmp(const char *s1, const char *s2, size_t n)
+char				*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	if (*s1 == *s2 && n > 1 && (*s1 || *s2))
-		return (ft_strncmp(s1 + 1, s2 + 1, n - 1));
-	return ((unsigned char)(*s1) - (unsigned char)(*s2));
+	char			*newstr;
+	size_t			max_size;
+	size_t			i;
+	size_t			ni;
+
+	i = (size_t)start - 1;
+	ni = 0;
+	max_size = i + 1 + len;
+	newstr = ft_strnew(len);
+	if (!newstr)
+		return (0);
+	while (++i < max_size)
+		newstr[ni++] = s[i];
+	newstr[max_size] = 0;
+	return (newstr);
 }

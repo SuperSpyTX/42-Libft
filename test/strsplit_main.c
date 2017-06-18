@@ -1,20 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   template.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 19:00:57 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/16 14:38:21 by jkrause          ###   ########.fr       */
+/*   Created: 2017/06/15 18:46:09 by jkrause           #+#    #+#             */
+/*   Updated: 2017/06/17 15:03:57 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-int				ft_strncmp(const char *s1, const char *s2, size_t n)
+#ifndef TEST_SUITE
+# define TEST_SUITE 0
+#endif
+
+int 
+
+int				main(int argc, char **argv)
 {
-	if (*s1 == *s2 && n > 1 && (*s1 || *s2))
-		return (ft_strncmp(s1 + 1, s2 + 1, n - 1));
-	return ((unsigned char)(*s1) - (unsigned char)(*s2));
+#if TEST_SUITE == 0
+	char **test = malloc(sizeof(char *) * 4);
+	test[0] = "hai";
+	test[1] = "thar";
+	printf("%lu\n", sizeof(char *));
+	printf("%s\n", test[1]);
+#endif
 }
+
+
