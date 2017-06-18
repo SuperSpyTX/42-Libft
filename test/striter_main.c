@@ -1,20 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   striter_main.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 19:00:57 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/16 14:38:21 by jkrause          ###   ########.fr       */
+/*   Created: 2017/06/16 13:36:32 by jkrause           #+#    #+#             */
+/*   Updated: 2017/06/16 13:55:52 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-int				ft_strncmp(const char *s1, const char *s2, size_t n)
+#ifndef TEST_SUITE
+# define TEST_SUITE 0
+#endif
+
+void			testfunc(unsigned i, char *c)
 {
-	if (*s1 == *s2 && n > 1 && (*s1 || *s2))
-		return (ft_strncmp(s1 + 1, s2 + 1, n - 1));
-	return ((unsigned char)(*s1) - (unsigned char)(*s2));
+	printf("%c", *c);
+	*c = i + '0';
 }
+
+int				main(int argc, char **argv)
+{
+#if TEST_SUITE == 0
+	char s1[] = "abcdef";
+	ft_striteri(s1, testfunc);
+	printf("%s", s1);
+#endif
+}
+
+
