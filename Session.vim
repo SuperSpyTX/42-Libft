@@ -8,53 +8,19 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +54 Makefile
 badd +24 includes/libft.h
-badd +1 inprogress-functions/ft_putchar_fd.c
-badd +1 inprogress-functions/ft_putnbr_fd.c
-badd +1 inprogress-functions/ft_putstr_fd.c
-badd +17 inprogress-functions/ft_isalnum.c
-badd +17 inprogress-functions/ft_isalpha.c
-badd +16 inprogress-functions/ft_isascii.c
-badd +17 inprogress-functions/ft_isdigit.c
-badd +18 inprogress-functions/ft_isprint.c
-badd +15 inprogress-functions/ft_tolower.c
-badd +17 inprogress-functions/ft_toupper.c
-badd +16 mandatory-functions/ft_putstr.c
-badd +8 mandatory-functions/ft_putnbr.c
-badd +18 mandatory-functions/ft_putchar.c
-badd +16 mandatory-functions/ft_atoi.c
-badd +7 mandatory-functions/ft_putendl.c
-badd +17 mandatory-functions/ft_putendl_fd.c
-badd +29 mandatory-functions/ft_strnstr.c
-badd +21 mandatory-functions/ft_strchr.c
-badd +26 mandatory-functions/ft_strrchr.c
-badd +5 mandatory-functions/ft_strcat.c
-badd +29 mandatory-functions/ft_strlcat.c
-badd +17 mandatory-functions/ft_strncat.c
-badd +1 mandatory-functions/ft_strcmp.c
-badd +1 mandatory-functions/ft_putchar_fd.c
-badd +18 mandatory-functions/ft_putstr_fd.c
-badd +1 mandatory-functions/ft_strcpy.c
-badd +17 inprogress-functions/ft_memalloc.c
-badd +21 inprogress-functions/ft_memdel.c
-badd +17 inprogress-functions/ft_strdel.c
-badd +19 inprogress-functions/ft_strnew.c
-badd +22 Makefile.m4
-badd +27 inprogress-functions/ft_atoll.c
-badd +26 mandatory-functions/ft_memalloc.c
-badd +16 mandatory-functions/ft_strclr.c
-badd +17 inprogress-functions/ft_striteri.c
-badd +17 inprogress-functions/ft_striter.c
-badd +28 inprogress-functions/strmap.c
-badd +17 inprogress-functions/strmapi.c
-badd +17 inprogress-functions/strnequ.c
-badd +17 inprogress-functions/strequ.c
-badd +1 mandatory-functions/ft_strncmp.c
-badd +25 inprogress-functions/ft_strjoin.c
-badd +30 inprogress-functions/ft_strsub.c
+badd +6 Makefile.m4
 badd +38 inprogress-functions/ft_strtrim.c
-badd +17 inprogress-functions/ft_strsplit.c
+badd +35 inprogress-functions/ft_strsplit.c
+badd +1 mandatory-functions/ft_strnstr.c
+badd +1 mandatory-functions/ft_strncpy.c
+badd +18 inprogress-functions/ft_memcpy.c
+badd +19 mandatory-functions/ft_strcpy.c
+badd +1 mandatory-functions/ft_memdel.c
+badd +32 mandatory-functions/ft_strlcat.c
+badd +29 inprogress-functions/ft_strsub.c
+badd +19 mandatory-functions/ft_strnew.c
+badd +16 mandatory-functions/ft_memalloc.c
 argglobal
 silent! argdel *
 set stal=2
@@ -74,12 +40,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 25 - ((22 * winheight(0) + 40) / 80)
+let s:l = 51 - ((48 * winheight(0) + 40) / 80)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-25
-normal! 031|
+51
+normal! 053|
 tabedit Makefile.m4
 set splitbelow splitright
 set nosplitbelow
@@ -118,12 +84,56 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 11 - ((10 * winheight(0) + 40) / 80)
+let s:l = 73 - ((45 * winheight(0) + 40) / 80)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-11
-normal! 0
+73
+normal! 025|
+tabedit inprogress-functions/ft_strsub.c
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=1 winheight=1 winminwidth=1 winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 17 - ((16 * winheight(0) + 40) / 80)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+17
+normal! 04|
+tabedit mandatory-functions/ft_memdel.c
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=1 winheight=1 winminwidth=1 winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 19 - ((18 * winheight(0) + 40) / 80)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+19
+normal! 04|
 tabedit inprogress-functions/ft_strtrim.c
 set splitbelow splitright
 set nosplitbelow
@@ -140,13 +150,35 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 40) / 80)
+let s:l = 10 - ((9 * winheight(0) + 40) / 80)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
-tabnext 4
+10
+normal! 02|
+tabedit mandatory-functions/ft_strnstr.c
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=1 winheight=1 winminwidth=1 winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 20 - ((19 * winheight(0) + 40) / 80)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+20
+normal! 05|
+tabnext 3
 set stal=1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

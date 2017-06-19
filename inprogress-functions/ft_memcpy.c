@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 01:18:58 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/18 14:18:00 by jkrause          ###   ########.fr       */
+/*   Created: 2017/06/18 14:15:52 by jkrause           #+#    #+#             */
+/*   Updated: 2017/06/18 14:22:54 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strcpy(char *dst, const char *src)
+void				*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t c;
+	size_t			i;
 
-	c = 0;
-	while (src[c] != 0)
+	i = 0;
+	while (i < n)
 	{
-		dst[c] = src[c];
-		c++;
+		((unsigned char*)dst)[i] = ((unsigned char*)src)[i];
+		i++;
 	}
-	dst[c] = '\0';
 	return (dst);
 }
