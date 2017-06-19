@@ -6,7 +6,7 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/16 16:47:31 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/19 03:42:00 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/19 03:46:28 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,9 @@ void				move_ptr(char const *s, char c, size_t *i, int flag)
 		while (s[*i] == c || s[*i + 1] == '\0')
 			*i += 1;
 	if (s[*i] == '\0' && s[*i - 1] >= 'A' && s[*i - 1] <= 'z')
+	{
 		((size_t*)*(i + 3))[*(i + 2) / sizeof(size_t) - 1] += 1;
+	}
 }
 
 char				**ft_strsplit(char const *s, char c)
