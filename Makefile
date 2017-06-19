@@ -21,7 +21,8 @@ CFLAGS = -Wall -Werror -Wextra -I $(INCLUDE)
 # -------------- Automated Variables ---------------- #
 # Fucking norm
 #SRC = $(wildcard $(addsuffix *.c, $(SRC_DIRS)))
-SRC = inprogress-functions/ft_strsplit.c \
+SRC = inprogress-functions/ft_memcpy.c \
+inprogress-functions/ft_strsplit.c \
 inprogress-functions/ft_striter.c \
 inprogress-functions/ft_striteri.c \
 inprogress-functions/ft_strmap.c \

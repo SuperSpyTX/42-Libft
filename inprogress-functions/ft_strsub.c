@@ -6,7 +6,7 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/16 15:07:17 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/16 16:47:02 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/18 20:35:57 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ char				*ft_strsub(char const *s, unsigned int start, size_t len)
 		return (0);
 	while (++i < max_size)
 		newstr[ni++] = s[i];
-	newstr[max_size] = 0;
+	newstr[ni] = 0;
 	return (newstr);
 }

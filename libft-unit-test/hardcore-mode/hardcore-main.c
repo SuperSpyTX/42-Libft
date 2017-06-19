@@ -58,18 +58,21 @@ int		hardcore_main(void *libft_so_handler)
 	int		i = -1;
 
 	srand(time(NULL) + clock());
-	while (test_table[++i].fun)
+	/*while (test_table[++i].fun)
 		if (!(test_table[i].ft = dlsym(libft_so_handler, test_table[i].name)))
 		{
 			printf("Hardcore mode is only for the good ones !\n");
 			return (-1);
-		}
+		}*/
 
+/*
 	if (rand() % 10 > 7)
 	{
 		printf("%s\n", mtable[rand() % 3]);
 		return (-1);
-	}
+	}*/
+
+	(void)libft_so_handler;
 
 	__start_impls = calloc(sizeof(impl_t), 0xF00);
 

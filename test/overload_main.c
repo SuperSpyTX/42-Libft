@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   overload_main.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 01:18:58 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/18 14:18:00 by jkrause          ###   ########.fr       */
+/*   Created: 2017/06/18 14:00:20 by jkrause           #+#    #+#             */
+/*   Updated: 2017/06/18 14:34:01 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
 
-char		*ft_strcpy(char *dst, const char *src)
+void dyn_resize(void **ptr, int *csize)
 {
-	size_t c;
+  int *gucci = malloc(*csize + (sizeof(int)));
+  *ptr = gucci;
+  *csize += sizeof(int);
+}
 
-	c = 0;
-	while (src[c] != 0)
-	{
-		dst[c] = src[c];
-		c++;
-	}
-	dst[c] = '\0';
-	return (dst);
+int main()
+{
+  int *s = malloc(sizeof(int) * 1);
+  int *csize = 1;
+  for (int i = 0; i < 102400; i++)
+  {
+    printf("%d\n", i);
+    dyn_resize(&s, &csize);
+    s[i] = s[i];
+  }
 }
