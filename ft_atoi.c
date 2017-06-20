@@ -6,12 +6,11 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/10 11:22:00 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/16 15:27:54 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/20 00:32:39 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 static int		trim_space(const char *str)
 {

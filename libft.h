@@ -6,7 +6,7 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/06 20:58:23 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/17 14:19:59 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/20 00:06:21 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,17 @@
 # include <unistd.h>
 # include <stdlib.h>
 
+/*
+** Libc / Mandatory Functions
+*/
 int					ft_atoi(const char *str);
-long long			ft_atoll(const char *str);
 
 char				*ft_itoa(int n);
 void				ft_bzero(void *s, size_t n);
+void				*ft_memset(void *b, int c, size_t len);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
+void				*ft_memccpy(void *dst, const void *restrict src,
+						int c, size_t n);
 void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
@@ -68,8 +73,6 @@ int					ft_isprint(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 
-int					is_whitespace(const char c);
-
 void				ft_putchar(char c);
 void				ft_putstr(char const *str);
 void				ft_putnbr(int nbr);
@@ -81,4 +84,11 @@ void				ft_putstr_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 
 void				ft_putendl_fd(char const *s, int fd);
+
+/*
+** Personal functions
+*/
+long long			ft_atoll(const char *str);
+char				*ft_itoa_base(int value, int base);
+int					is_whitespace(const char c);
 #endif

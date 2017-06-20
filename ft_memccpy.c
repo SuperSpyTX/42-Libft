@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strnequ.c                                          :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/16 14:35:44 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/16 14:37:44 by jkrause          ###   ########.fr       */
+/*   Created: 2017/06/18 14:15:52 by jkrause           #+#    #+#             */
+/*   Updated: 2017/06/20 00:04:42 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int					ft_strnequ(char const *s1, char const *s2, size_t n)
+void				*ft_memccpy(void *dst, const void *restrict src,
+										int c, size_t n)
 {
-	return (ft_strncmp(s1, s2, n) == 0 ? 1 : 0);	
+	size_t			i;
+
+	i = 0;
+	while (i < n)
+	{
+		((unsigned char*)dst)[i] = ((unsigned char*)src)[i];
+		if (((unsigned char*)dst)[i] == (unsigned char)c)
+			return (dst + i + 1);
+		i++;
+	}
+	return (0);
 }
