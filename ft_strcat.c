@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/11 06:45:15 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/11 07:14:40 by jkrause          ###   ########.fr       */
+/*   Created: 2017/06/11 21:19:15 by jkrause           #+#    #+#             */
+/*   Updated: 2017/06/20 00:30:53 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char				*ft_strnstr(const char *big, const char *little, size_t len)
+char				*ft_strcat(char *s1, const char *s2)
 {
-	size_t charsmud;
-	size_t i;
+	size_t				g;
+	size_t				k;
 
-	i = -1;
-	if (little[0] == '\0')
-		return (char*)(big);
-	while (big[++i] != '\0')
-	{
-		charsmud = -1;
-		while (little[++charsmud] != '\0')
-		{
-			if ((i + charsmud) >= len)
-				break ;
-			if (little[charsmud] != big[i + charsmud])
-				break ;
-			if (little[charsmud + 1] == '\0')
-				return (char*)(big + i);
-		}
-	}
-	return (0);
+	g = -1;
+	k = -1;
+	while (s1[++g] != '\0')
+		;
+	while (s2[++k] != '\0')
+		s1[g++] = s2[k];
+	s1[g] = '\0';
+	return (s1);
 }

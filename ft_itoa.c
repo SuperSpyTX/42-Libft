@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/11 07:26:50 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/11 08:04:53 by jkrause          ###   ########.fr       */
+/*   Created: 2017/06/19 22:15:20 by jkrause           #+#    #+#             */
+/*   Updated: 2017/06/19 22:17:26 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char				*ft_strchr(const char *s, int c)
+char				*ft_itoa(int n)
 {
-	if (*s != c && *s)
-		return ft_strchr(s + 1, c);
-	else if (!*s && c != 0)
-		return (0);
-	return ((char*)s);
+	return (ft_itoa_base(n, 10));
 }

@@ -6,14 +6,13 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/15 16:53:30 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/15 18:58:21 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/20 00:29:35 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-char				*ft_strnew(size_t size)
+char			*ft_strnew(size_t size)
 {
 	return ((char*)ft_memalloc(size + 1));
 }
