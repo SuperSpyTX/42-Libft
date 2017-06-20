@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/16 15:07:17 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/18 20:35:57 by jkrause          ###   ########.fr       */
+/*   Created: 2017/06/19 22:32:11 by jkrause           #+#    #+#             */
+/*   Updated: 2017/06/20 00:26:42 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char				*ft_strsub(char const *s, unsigned int start, size_t len)
+void				ft_bzero(void *s, size_t n)
 {
-	char			*newstr;
-	size_t			max_size;
-	size_t			i;
-	size_t			ni;
-
-	i = (size_t)start - 1;
-	ni = 0;
-	max_size = i + 1 + len;
-	newstr = ft_strnew(len);
-	if (!newstr)
-		return (0);
-	while (++i < max_size)
-		newstr[ni++] = s[i];
-	newstr[ni] = 0;
-	return (newstr);
+	ft_memset(s, 0, n);
 }

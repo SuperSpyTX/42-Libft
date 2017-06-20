@@ -6,7 +6,7 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/16 15:26:13 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/17 22:06:03 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/20 00:28:59 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ char				*ft_strtrim(char const *s)
 	len = ft_strlen(s);
 	end = len - 1;
 	begin = -1;
-
 	while (is_special_whitespace(s[++begin]) && begin < len)
 		;
 	while (is_special_whitespace(s[end--]) && end > -1)

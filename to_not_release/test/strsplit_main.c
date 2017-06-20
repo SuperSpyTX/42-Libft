@@ -6,7 +6,7 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/15 18:46:09 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/19 03:24:49 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/19 23:39:17 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ int				main(int argc, char **argv)
 	char spl = '_';
 	char **buf = ft_strsplit(pls, spl);
 	int i = 0;
-	//while (*buf)
-		//printf("%s\n", *buf++);
+	while (*buf)
+		printf("%s\n", *buf++);
 #endif
 #if TEST_SUITE == 2
 	char *s = "      split       this for   me  !       ";
@@ -80,5 +80,10 @@ int				main(int argc, char **argv)
 	tt = ft_strsplit("", '*');
 	printf("%s\n", tt[0]);
 #endif
+#if TEST_SUITE == 10
+	char *s = "                  olol";
+	char **r = ft_strsplit(s, ' ');
 
+	printf("%s\n", r[0]);
+#endif
 }

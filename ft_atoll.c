@@ -6,15 +6,15 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/10 11:22:00 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/16 12:21:01 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/20 00:33:09 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		trim_space(const char *str)
+static int				trim_space(const char *str)
 {
-	int		i;
+	int				i;
 
 	i = 0;
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
@@ -26,7 +26,7 @@ long long				ft_atoll(const char *str)
 {
 	long long		num;
 	long long		i;
-	int		neg;
+	int				neg;
 
 	num = 0;
 	neg = 0;

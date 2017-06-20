@@ -17,7 +17,7 @@ INCLUDE = ./includes/
 divert(-1)
 ## TAKE THAT, NORM.
 
-define(SRC_DIRS, .)
+define(SRC_DIRS, inprogress-functions mandatory-functions personal-functions)
 
 define(SRC_DIRS2, patsubst(SRC_DIRS,` ',```,'''))
 divert(0)
@@ -27,7 +27,7 @@ CFLAGS = -Wall -Werror -Wextra -I $(INCLUDE)
 # -------------- Automated Variables ---------------- #
 # Fucking norm
 #SRC = $(wildcard $(addsuffix *.c, $(SRC_DIRS)))
-SRC = syscmd(find . -type f -d 1 -name "*.c" | sed -e "s/$/ \\\/g")
+SRC = syscmd(find {SRC_DIRS2} -type f -name "*.c" | sed -e "s/$/ \\\/g")
 # For shared library
 OBJ = $(subst .c,.o, $(SRC))
 
