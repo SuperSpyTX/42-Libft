@@ -6,7 +6,7 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/16 13:02:24 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/16 14:28:57 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/20 17:22:16 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void				ft_striteri(char *s, void (*f)(unsigned int, char *))
 	int			i;
 
 	i = -1;
+	if (!s || !f)
+		return ;
 	while (*s != '\0')
 		f(++i, s++);
 }

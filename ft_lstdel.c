@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   atoi_main.c                                        :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/09 15:46:15 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/16 12:29:13 by jkrause          ###   ########.fr       */
+/*   Created: 2017/06/21 00:42:11 by jkrause           #+#    #+#             */
+/*   Updated: 2017/06/21 03:16:00 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int				main(int argc, char **argv)
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	printf("FT:%d",    ft_atoll("-99999999999999999999999999"));
-	printf("\nC:%d\n", atoi("    -99999999999999999999999999"));
-	printf("FT:%lld\n", ft_atoll("\e06050"));
-	printf("C:%ld\n", atol("\e06050"));
-}
+	t_list				*twanna;
+	t_list				*temp;
 
+	twanna = (*alst)->next;
+	while (twanna)
+	{
+		temp = twanna->next;
+		ft_lstdelone(&twanna, del);
+		twanna = temp;
+	}
+	ft_lstdelone(alst, del);
+}

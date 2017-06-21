@@ -12,7 +12,7 @@
 
 # ----------------- Configuration ------------------- #
 NAME = libft.a
-INCLUDE = ./includes/
+INCLUDE = libft.h
 #SRC_DIRS = ./inprogress-functions/ ./mandatory-functions/ ./personal-functions/
 divert(-1)
 ## TAKE THAT, NORM.
@@ -22,7 +22,7 @@ define(SRC_DIRS, .)
 define(SRC_DIRS2, patsubst(SRC_DIRS,` ',```,'''))
 divert(0)
 # For shared library
-CFLAGS = -Wall -Werror -Wextra -I $(INCLUDE)
+CFLAGS = -Wall -Werror -Wextra -I$(INCLUDE)
 
 # -------------- Automated Variables ---------------- #
 # Fucking norm

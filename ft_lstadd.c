@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   atoi_main.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/09 15:46:15 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/09 18:18:01 by jkrause          ###   ########.fr       */
+/*   Created: 2017/06/21 00:42:25 by jkrause           #+#    #+#             */
+/*   Updated: 2017/06/21 03:16:05 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int				main(int argc, char **argv)
+void				ft_lstadd(t_list **alst, t_list *n)
 {
-	printf("FT:%d", ft_atoi(" 2147483647"));
-	printf("\nC:%d\n", atoi("2147483647"));
-	printf("FT:%d\n", ft_atoi("\e06050"));
-	printf("C:%d\n", atoi("\e06050"));
+	if (n)
+	{
+		n->next = *alst;
+		*alst = n;
+	}
 }
-

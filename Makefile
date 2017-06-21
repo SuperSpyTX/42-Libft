@@ -12,11 +12,11 @@
 
 # ----------------- Configuration ------------------- #
 NAME = libft.a
-INCLUDE = ./includes/
+INCLUDE = libft.h
 #SRC_DIRS = ./inprogress-functions/ ./mandatory-functions/ ./personal-functions/
 
 # For shared library
-CFLAGS = -Wall -Werror -Wextra -I $(INCLUDE)
+CFLAGS = -Wall -Werror -Wextra -I$(INCLUDE)
 
 # -------------- Automated Variables ---------------- #
 # Fucking norm
@@ -29,6 +29,8 @@ SRC = ./ft_strrchr.c \
 ./ft_memmove.c \
 ./ft_strsplit.c \
 ./ft_strncpy.c \
+./ft_lstmap.c \
+./ft_lstadd.c \
 ./ft_striter.c \
 ./ft_strstr.c \
 ./ft_isdigit.c \
@@ -39,8 +41,11 @@ SRC = ./ft_strrchr.c \
 ./ft_bzero.c \
 ./ft_isalnum.c \
 ./ft_putstr_fd.c \
+./ft_lstiter.c \
+./ft_lstdelone.c \
 ./ft_toupper.c \
 ./ft_strcpy.c \
+./ft_lstnew.c \
 ./ft_strdup.c \
 ./ft_putnbr_fd.c \
 ./ft_striteri.c \
@@ -75,6 +80,7 @@ SRC = ./ft_strrchr.c \
 ./ft_atoll.c \
 ./is_whitespace.c \
 ./ft_isprint.c \
+./ft_lstdel.c \
 ./ft_strchr.c \
 
 # For shared library
