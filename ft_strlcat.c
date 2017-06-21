@@ -6,33 +6,44 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/11 20:08:04 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/15 16:53:03 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/21 00:31:06 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
+/*
+** I really just wanted this function to work.
+** Nobody will want to use this function anyways.........
+** If any tests fail, try using n = size - dlen;
+*/
+
 size_t				ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int				g;
-	int				k;
-	int				o;
+	size_t			dlen;
+	size_t			n;
+	size_t			slen;
+	size_t			i;
 
-	g = -1;
-	k = -1;
-	o = (int)size;
-	while (dst[++g] != '\0')
+	n = size;
+	slen = 0;
+	dlen = 0;
+	while (n-- != 0 && dst[dlen] != '\0')
+		dlen++;
+	n += 1;
+	if (n == 0)
+		return (dlen + ft_strlen(src));
+	i = 0;
+	while (src[slen] != '\0')
 	{
-		if ((o - g) == 0)
-			return (g + ft_strlen(src));
+		if (n != 1)
+		{
+			dst[dlen + i++] = src[slen];
+			n--;
+		}
+		slen++;
 	}
-	while (src[++k] != '\0')
-		if ((o - g) > 1)
-			dst[g++] = src[k];
-		else
-			g++;
-	if ((o - k) > 0)
-		dst[g] = '\0';
-	return (g);
+	dst[dlen + i] = '\0';
+	return (dlen + slen);
 }

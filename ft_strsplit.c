@@ -6,7 +6,7 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/16 16:47:31 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/20 00:03:22 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/20 17:01:45 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static char			**apply_substr(char const *s, size_t *m, size_t msize)
 	return (buffer);
 }
 
-void				move_ptr(char const *s, char c, size_t *i, int flag)
+static void			move_ptr(char const *s, char c, size_t *i, int flag)
 {
 	if (flag)
 		while (s[*i] != c && s[*i + 1] != '\0')
@@ -78,7 +78,7 @@ char				**ft_strsplit(char const *s, char c)
 	size_t				i;
 
 	matches = ft_memalloc(1);
-	if (!matches)
+	if (!s || !matches)
 		return (0);
 	cngowillnever = 1;
 	i = 0;

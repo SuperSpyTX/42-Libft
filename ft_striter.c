@@ -6,7 +6,7 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/16 13:58:20 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/16 14:28:53 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/20 17:22:47 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void				ft_striter(char *s, void (*f)(char *))
 {
+	if (!s || !f)
+		return ;
 	while (*s != '\0')
 		f(s++);
 }

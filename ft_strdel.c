@@ -6,7 +6,7 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/15 16:53:38 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/15 17:10:19 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/20 17:23:39 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void				ft_strdel(char **as)
 {
+	if (!as)
+		return ;
 	ft_memdel((void**)as);
 }

@@ -6,7 +6,7 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/16 15:02:22 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/16 15:06:46 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/20 17:02:43 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char				*ft_strjoin(char const *s1, char const *s2)
 	int				s1l;
 	int				s2l;
 
+	if (!s1 || !s2)
+		return (0);
 	s1l = ft_strlen(s1);
 	s2l = ft_strlen(s2);
 	newstr = ft_strnew(s1l + s2l);
