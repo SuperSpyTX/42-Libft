@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strchr_main.c                                      :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/11 07:29:49 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/11 17:05:41 by jkrause          ###   ########.fr       */
+/*   Created: 2017/06/21 00:43:07 by jkrause           #+#    #+#             */
+/*   Updated: 2017/06/21 03:29:18 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int				main(int argc, char **argv)
+t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	char *s1 = "\0";
-	char s2 = 'a';
-	printf("%s\n%s", ft_strrchr(s1, s2), strrchr(s1, s2));
-}
+	t_list				*nlist;
+	t_list				*pls;
 
+	if (!lst)
+		return (0);
+	nlist = f(lst);
+	pls = nlist;
+	while (lst->next)
+	{
+		lst = lst->next;
+		if (!(nlist->next = f(lst)))
+		{
+			free(nlist->next);
+			return (0);
+		}
+		nlist = nlist->next;
+	}
+	return (pls);
+}

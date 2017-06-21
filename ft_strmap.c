@@ -6,7 +6,7 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/16 14:06:02 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/16 14:28:46 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/20 17:21:54 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char				*ft_strmap(char const *s, char (*f)(char))
 	size_t			siz;
 	char			*newstr;
 
+	if (!s || !f)
+		return (0);
 	siz = ft_strlen(s);
 	newstr = ft_strnew(siz);
 	if (!newstr)

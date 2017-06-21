@@ -6,7 +6,7 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/16 14:05:39 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/16 14:28:55 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/20 17:21:40 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char				*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t			siz;
 	char			*newstr;
 
+	if (!s || !f)
+		return (0);
 	siz = ft_strlen(s);
 	newstr = ft_strnew(siz);
 	if (!newstr)
