@@ -6,7 +6,7 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/06 20:58:23 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/22 15:06:14 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/22 16:05:45 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,7 @@ long long			ft_atoll(const char *str);
 char				*ft_itoa_base(int value, int base);
 int					ft_is_whitespace(const char c);
 int					ft_ishex(const char c);
-void				*ft_expandwrite(void *dst, int dstlen, void *src, int *srcsize);
+void				*ft_expandwrite(void *dst, int dstlen,
+						void *src, int *srcsize);
 t_no				*ft_no(void *anything);
 #endif
