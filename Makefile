@@ -26,12 +26,15 @@ SRC = ./ft_strrchr.c \
 ./ft_strcmp.c \
 ./ft_strlcat.c \
 ./ft_memcpy.c \
+./ft_no.c \
+./ft_is_whitespace.c \
 ./ft_memmove.c \
 ./ft_strsplit.c \
 ./ft_strncpy.c \
 ./ft_lstmap.c \
 ./ft_lstadd.c \
 ./ft_striter.c \
+./ft_atol.c \
 ./ft_strstr.c \
 ./ft_isdigit.c \
 ./ft_putnbr.c \
@@ -45,6 +48,7 @@ SRC = ./ft_strrchr.c \
 ./ft_lstdelone.c \
 ./ft_toupper.c \
 ./ft_strcpy.c \
+./ft_expandwrite.c \
 ./ft_lstnew.c \
 ./ft_strdup.c \
 ./ft_putnbr_fd.c \
@@ -77,11 +81,10 @@ SRC = ./ft_strrchr.c \
 ./ft_atoi.c \
 ./ft_strclr.c \
 ./ft_strmapi.c \
-./ft_atoll.c \
-./is_whitespace.c \
 ./ft_isprint.c \
 ./ft_lstdel.c \
 ./ft_strchr.c \
+./ft_ishex.c \
 
 # For shared library
 OBJ = $(subst .c,.o, $(SRC))
@@ -90,8 +93,8 @@ OBJ = $(subst .c,.o, $(SRC))
 
 all: $(NAME)
 
-$(OBJ): $(SRC)
-	gcc $(CFLAGS) -c $(subst .o,.c, $@) -o $@
+%.o: %.c
+	gcc $(CFLAGS) -c $^ -o $@
 
 # For shared library
 $(NAME): $(OBJ)

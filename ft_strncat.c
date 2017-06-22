@@ -6,7 +6,7 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/11 21:24:55 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/15 16:53:05 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/21 14:03:48 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,15 @@ char				*ft_strncat(char *s1, const char *s2, size_t n)
 	size_t				g;
 	size_t				k;
 
+	if (n == 0)
+		return (s1);
 	g = -1;
 	k = 0;
 	while (s1[++g] != '\0')
 		;
 	while (k < n && (s1[g++] = s2[k++]) != '\0')
 		;
+	if (k >= n && s1[g] != '\0')
+		s1[g] = '\0';
 	return (s1);
 }

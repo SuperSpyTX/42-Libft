@@ -6,7 +6,7 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/11 01:18:58 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/11 02:29:55 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/21 14:02:08 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char		*ft_strncpy(char *dest, const char *src, size_t len)
 {
-	size_t c;
+	size_t				c;
 
 	c = 0;
 	while (src[c] != 0 && c < len)
