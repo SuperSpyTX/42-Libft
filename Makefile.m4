@@ -35,8 +35,8 @@ OBJ = $(subst .c,.o, $(SRC))
 
 all: $(NAME)
 
-$(OBJ): $(SRC)
-	gcc $(CFLAGS) -c $(subst .o,.c, $@) -o $@
+%.o: %.c
+	gcc $(CFLAGS) -c $^ -o $@
 
 # For shared library
 $(NAME): $(OBJ)

@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_expandwrite.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/11 07:26:50 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/22 16:01:45 by jkrause          ###   ########.fr       */
+/*   Created: 2017/06/22 13:28:05 by jkrause           #+#    #+#             */
+/*   Updated: 2017/06/22 15:26:35 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char				*ft_strchr(const char *s, int c)
+void			*ft_expandwrite(void *new, int newlen, void *src, int *srcsize)
 {
-	while ((unsigned char)*s != (unsigned char)c && *s)
-		(void)*s++;
-	if (!*s && c != 0)
-		return (0);
-	return ((char*)s);
+	int				length;
+	int				newlength;
+	int				i;
+	char			*newbuf;
+
+	length = newlen;
+	newlength = *srcsize + length;
+	newbuf = (char*)ft_memalloc(newlength);
+	i = -1;
+	while (++i < *srcsize)
+		((char*)newbuf)[i] = ((char*)src)[i];
+	i -= 1;
+	while (++i < newlength)
+		((char*)newbuf)[i] = ((char*)new)[i - *srcsize];
+	*srcsize = newlength;
+	return (newbuf);
 }
