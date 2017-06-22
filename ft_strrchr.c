@@ -6,7 +6,7 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/11 08:07:13 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/11 15:26:26 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/21 13:54:51 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char				*ft_strrchr(const char *s, int c)
 	i = -1;
 	lastoccurance = -1;
 	while (s[++i] != '\0')
-		if (s[i] == c)
+		if ((unsigned char)s[i] == (unsigned char)c)
 			lastoccurance = i;
 	if (c == 0)
 		lastoccurance = i;
