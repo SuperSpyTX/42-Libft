@@ -6,7 +6,7 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/06 20:58:23 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/22 16:05:45 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/22 16:08:08 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ typedef struct		s_no
 	int				zero;
 }					t_no;
 
-long long			ft_atoll(const char *str);
+long long			ft_atol(const char *str);
 char				*ft_itoa_base(int value, int base);
 int					ft_is_whitespace(const char c);
 int					ft_ishex(const char c);

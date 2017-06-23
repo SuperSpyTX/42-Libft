@@ -6,7 +6,7 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/10 11:22:00 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/20 00:33:09 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/23 13:41:46 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int				trim_space(const char *str)
 	return (i);
 }
 
-long long				ft_atoll(const char *str)
+long long				ft_atol(const char *str)
 {
 	long long		num;
 	long long		i;
