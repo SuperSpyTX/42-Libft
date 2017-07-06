@@ -12,7 +12,7 @@
 
 # ----------------- Configuration ------------------- #
 NAME = libft.a
-INCLUDE = libft.h
+INCLUDE = includes/
 #SRC_DIRS = ./inprogress-functions/ ./mandatory-functions/ ./personal-functions/
 
 # For shared library
