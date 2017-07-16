@@ -6,7 +6,7 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/06 20:58:23 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/22 16:08:08 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/07/13 19:43:15 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,4 +118,5 @@ int					ft_ishex(const char c);
 void				*ft_expandwrite(void *dst, int dstlen,
 						void *src, int *srcsize);
 t_no				*ft_no(void *anything);
+char				*ft_strnchr(const char *s, int c, size_t size);
 #endif
