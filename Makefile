@@ -16,7 +16,7 @@ INCLUDE = includes/
 #SRC_DIRS = ./inprogress-functions/ ./mandatory-functions/ ./personal-functions/
 
 # For shared library
-CFLAGS = -Wall -Werror -Wextra -I$(INCLUDE)
+CFLAGS = -fPIC -Wall -Werror -Wextra -I$(INCLUDE)
 
 # -------------- Automated Variables ---------------- #
 # Fucking norm
