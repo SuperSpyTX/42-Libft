@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_expandwrite.c                                   :+:      :+:    :+:   */
+/*   ft_strnchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/22 13:28:05 by jkrause           #+#    #+#             */
-/*   Updated: 2017/07/14 02:55:28 by jkrause          ###   ########.fr       */
+/*   Created: 2017/07/13 19:41:06 by jkrause           #+#    #+#             */
+/*   Updated: 2017/07/13 23:20:06 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			*ft_expandwrite(void *new, int newlen, void *src, int *srcsize)
+char				*ft_strnchr(const char *s, int c, size_t size)
 {
-	int				length;
-	int				newlength;
-	char			*newbuf;
+	size_t					len;
 
-	length = newlen;
-	newlength = *srcsize + length;
-	newbuf = (char*)malloc(newlength);
-	ft_memcpy(newbuf, src, *srcsize);
-	ft_memcpy(newbuf + *srcsize, new, newlen);
-	*srcsize = newlength;
-	if (src)
-		free(src);
-	return (newbuf);
+	len = 0;
+	while ((unsigned char)*s != (unsigned char)c && *s && len++ < size)
+		(void)*s++;
+	if ((!*s && c != 0) || len >= size)
+		return (0);
+	return ((char*)s);
 }

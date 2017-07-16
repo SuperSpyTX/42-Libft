@@ -84,6 +84,7 @@ SRC = ./ft_strrchr.c \
 ./ft_isprint.c \
 ./ft_lstdel.c \
 ./ft_strchr.c \
+./ft_strnchr.c \
 ./ft_ishex.c \
 
 # For shared library
