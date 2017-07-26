@@ -99,9 +99,8 @@ all: $(NAME)
 
 # For shared library
 $(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
 	/bin/rm -f $(NAME)
-	ranlib $(NAME)
+	ar rcs $(NAME) $(OBJ)
 
 clean:
 	/bin/rm -f $(OBJ)
