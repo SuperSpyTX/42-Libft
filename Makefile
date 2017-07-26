@@ -100,6 +100,7 @@ all: $(NAME)
 # For shared library
 $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
+	/bin/rm -f $(NAME)
 	ranlib $(NAME)
 
 clean:
