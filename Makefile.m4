@@ -26,8 +26,9 @@ define(MK_LIBFT_INCLUDE, includes)
 define(MK_LIBFT_BIN, libft.a)
 
 # ------------ Automated Variables ------------------ #
-define(MK_AUTO_SRC_DIR, patsubst(MK_SRC_DIRS,` ',```,'''))
-define(MK_AUTO_SRC, esyscmd(bash -c 'find ifelse(MK_SRC_DIRS,.,.,{MK_AUTO_SRC_DIR}) -type f -name "*.c" | sed -e "s/$/ \\\/g"'))
+define(MK_AUTO_SRC_DIR, patsubst(MK_SRC_DIRS,` ',`````,'''''))
+pushdef(`MK_AUTO_SRC_DIR', ifelse(MK_SRC_DIRS,.,.,{MK_AUTO_SRC_DIR}))
+define(MK_AUTO_SRC, esyscmd(bash -c 'find MK_AUTO_SRC_DIR -type f -name "*.c" | sed -e "s/$/ \\\/g"'))
 define(MK_AUTO_ISLINUX, ifelse(esyscmd(uname -s | tr -d '\n'), `Darwin', 0, 1))
 define(MK_AUTO_SRC_DIR, patsubst(MK_SRC_DIRS,` ',```,'''))
 define(MK_AUTO_INCLUDE_DIR, -I patsubst(MK_INCLUDE_DIRS,` ',``` -I '''))
