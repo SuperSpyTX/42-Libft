@@ -3,24 +3,19 @@
 #*                                                        :::      ::::::::   */
 #*   Makefile                                           :+:      :+:    :+:   */
 #*                                                    +:+ +:+         +:+     */
-#*   By: jkrause <jkrause@student.42.us.org>      e  +#+  +:+       +#+        */
+#*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 #*                                                +#+#+#+#+#+   +#+           */
 #*   Created: 2017/04/18 03:42:42 by jkrause           #+#    #+#             */
-#*   Updated: 2017/06/11 02:45:14 by jkrause          ###   ########.fr       *#
+#*   Updated: 2017/06/11 02:45:14 by jkrause          ###   ########.fr       */
 #*                                                                            */
 #* ************************************************************************** */
+# ----------------- Version 1.3 --------------------- #
 
-# ----------------- Configuration ------------------- #
+# ------------- Automated Configuration ------------- #
+
 NAME = libft.a
-INCLUDE = libft.h
-#SRC_DIRS = ./inprogress-functions/ ./mandatory-functions/ ./personal-functions/
+CFLAGS = -g -Wall -Werror -Wextra -I includes
 
-# For shared library
-CFLAGS = -Wall -Werror -Wextra -I$(INCLUDE)
-
-# -------------- Automated Variables ---------------- #
-# Fucking norm
-#SRC = $(wildcard $(addsuffix *.c, $(SRC_DIRS)))
 SRC = ./ft_strrchr.c \
 ./ft_putstr.c \
 ./ft_strcmp.c \
@@ -65,6 +60,7 @@ SRC = ./ft_strrchr.c \
 ./ft_memalloc.c \
 ./ft_putendl.c \
 ./ft_strncat.c \
+./ft_strnchr.c \
 ./ft_itoa.c \
 ./ft_strncmp.c \
 ./ft_memcmp.c \
@@ -86,7 +82,6 @@ SRC = ./ft_strrchr.c \
 ./ft_strchr.c \
 ./ft_ishex.c \
 
-# For shared library
 OBJ = $(subst .c,.o, $(SRC))
 
 # ------------------- Targets ----------------------- #
@@ -96,15 +91,15 @@ all: $(NAME)
 %.o: %.c
 	gcc $(CFLAGS) -c $^ -o $@
 
-# For shared library
 $(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+	/bin/rm -f $(NAME)
+	ar rcs $(NAME) $(OBJ)
 
 clean:
 	/bin/rm -f $(OBJ)
 
 fclean: clean
 	/bin/rm -f $(NAME)
+
 
 re: fclean all
