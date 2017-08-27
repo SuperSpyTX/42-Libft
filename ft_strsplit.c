@@ -6,7 +6,7 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/16 16:47:31 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/20 17:01:45 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/08/27 08:07:31 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ static void			dyn_insert(size_t **ptr, size_t *size, size_t i1, size_t i2)
 	(*ptr)[(*size / sizeof(size_t)) - 1] = i2;
 }
 
-static char			**apply_substr(char const *s, size_t *m, size_t msize)
+static char			**apply_substr(char const *s, size_t *m,
+						size_t msize, char c)
 {
 	char				**buffer;
 	char				*newstr;
@@ -41,17 +42,16 @@ static char			**apply_substr(char const *s, size_t *m, size_t msize)
 	size_t				b;
 
 	msize /= sizeof(size_t);
-	buffer = (char**)malloc(sizeof(char*) * (msize + 1));
+	buffer = (char**)ft_memalloc(sizeof(char*) * (msize + 1));
 	if (!buffer)
 		return (0);
 	i = 0;
 	b = 0;
 	while (i < msize)
 	{
+		(void)c;
 		newstr = ft_strsub(s, m[i], m[i + 1]);
-		if ((((unsigned char*)s)[m[i] + m[i + 1] + 1] == '\0')
-				&& (((unsigned char*)s)[m[i] + m[i + 1]] >= 'A')
-				&& (((unsigned char*)s)[m[i] + m[i + 1]] <= 'z'))
+		if (i + 1 == (msize - 1) && ((unsigned char*)s)[m[i] + m[i + 1]] != c)
 			newstr = ft_strsub(s, m[i], m[i + 1] + 1);
 		buffer[b++] = newstr;
 		i += 2;
@@ -67,7 +67,9 @@ static void			move_ptr(char const *s, char c, size_t *i, int flag)
 			*i += 1;
 	else
 		while (s[*i] == c || s[*i + 1] == '\0')
+		{
 			*i += 1;
+		}
 }
 
 char				**ft_strsplit(char const *s, char c)
@@ -95,5 +97,5 @@ char				**ft_strsplit(char const *s, char c)
 				dyn_insert(&matches, &cngowillnever, a, (i - a));
 			move_ptr(s, c, &i, 0);
 		}
-	return (apply_substr(s, matches, cngowillnever));
+	return (apply_substr(s, matches, cngowillnever, c));
 }
