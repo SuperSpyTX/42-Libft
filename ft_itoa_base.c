@@ -6,7 +6,7 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/19 16:44:19 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/23 12:17:21 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/07/22 17:30:13 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static char			*ft_putnum(int num, int base, char *buf, int *size)
 	int				max;
 	char			pls;
 
-	alpha = "0123456789ABCDEF";
+	alpha = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	pls = 0;
 	max = base - 1;
 	if (num < 0)
@@ -60,5 +60,6 @@ char				*ft_itoa_base(int value, int base)
 		*size = 1;
 	}
 	ha = whenlifebreaksdown(value, base, ha, size);
+	ha = ft_expandwrite("\0", 1, ha, size);
 	return (ha);
 }

@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_expandwrite.c                                   :+:      :+:    :+:   */
+/*   ft_expandpad.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/22 13:28:05 by jkrause           #+#    #+#             */
-/*   Updated: 2017/07/14 02:55:28 by jkrause          ###   ########.fr       */
+/*   Created: 2017/08/17 18:25:52 by jkrause           #+#    #+#             */
+/*   Updated: 2017/08/17 22:07:09 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			*ft_expandwrite(void *new, int newlen, void *src, int *srcsize)
+char				*ft_expandpad(char c, int repeat, char *result, int *bsize)
 {
-	int				length;
-	int				newlength;
-	char			*newbuf;
+	char				*tmp;
 
-	length = newlen;
-	newlength = *srcsize + length;
-	newbuf = (char*)malloc(newlength);
-	ft_memcpy(newbuf, src, *srcsize);
-	ft_memcpy(newbuf + *srcsize, new, newlen);
-	*srcsize = newlength;
-	if (src)
-		free(src);
-	return (newbuf);
+	tmp = ft_strnew(repeat);
+	ft_memset(tmp, c, repeat);
+	result = ft_expandwrite(tmp, repeat, result, bsize);
+	free(tmp);
+	return (result);
 }
