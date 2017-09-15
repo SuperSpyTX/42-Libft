@@ -28,7 +28,7 @@ static char			*ft_putnum(int num, int base, char *buf, int *size)
 	else
 	{
 		pls = alpha[num];
-		buf = (char*)ft_expandwrite(&pls, 1, buf, size);
+		buf = (char*)expand_write(&pls, 1, buf, size);
 	}
 	return (buf);
 }
@@ -60,6 +60,6 @@ char				*ft_itoa_base(int value, int base)
 		*size = 1;
 	}
 	ha = whenlifebreaksdown(value, base, ha, size);
-	ha = ft_expandwrite("\0", 1, ha, size);
+	ha = expand_write("\0", 1, ha, size);
 	return (ha);
 }

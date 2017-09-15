@@ -6,7 +6,7 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/06 20:58:23 by jkrause           #+#    #+#             */
-/*   Updated: 2017/07/13 19:43:15 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/09/14 01:54:19 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
+
+# include "get_next_line.h"
+# include "expand.h"
+# include "ft_printf.h"
 
 /*
 ** Libc / Mandatory Functions
@@ -115,8 +119,8 @@ long long			ft_atol(const char *str);
 char				*ft_itoa_base(int value, int base);
 int					ft_is_whitespace(const char c);
 int					ft_ishex(const char c);
-void				*ft_expandwrite(void *dst, int dstlen,
-						void *src, int *srcsize);
 t_no				*ft_no(void *anything);
 char				*ft_strnchr(const char *s, int c, size_t size);
+char				*ft_ltostr_base(void *value, int base,
+						char *alpha, int sign);
 #endif
