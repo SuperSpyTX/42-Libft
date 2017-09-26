@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   expand.h                                           :+:      :+:    :+:   */
+/*   expand_get_next_line_until.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/11 20:16:43 by jkrause           #+#    #+#             */
-/*   Updated: 2017/09/26 12:02:28 by jkrause          ###   ########.fr       */
+/*   Created: 2017/09/26 12:02:04 by jkrause           #+#    #+#             */
+/*   Updated: 2017/09/26 12:02:06 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EXPAND_H
-# define EXPAND_H
+#include "expand.h"
+#include "get_next_line.h"
 
-char				*expand_pad(char c, int repeat,
-						char *result, int *bsize);
-void				*expand_write(void *dst, int dstlen,
-						void *src, int *srcsize);
-void				*expand_get_next_line_until(int fd, void *(*f)(char*));
-#endif
+void					*expand_get_next_line_until(int fd, void *(*f)(char*))
+{
+	char					*line;
+	void					*result;
+
+	result = 0;
+	line = 0;
+	while (get_next_line(fd, &line) == 1)
+	{
+		result = f(line);
+		free(line);
+		if (result)
+			return (result);
+	}
+	return (0);
+}
