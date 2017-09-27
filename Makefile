@@ -16,7 +16,7 @@ INCLUDE = libft.h
 #SRC_DIRS = ./inprogress-functions/ ./mandatory-functions/ ./personal-functions/
 
 # For shared library
-CFLAGS = -Wall -Werror -Wextra -I$(INCLUDE)
+CFLAGS = -Wall -Werror -Wextra -I$(INCLUDE) -I.
 
 # -------------- Automated Variables ---------------- #
 # Fucking norm
