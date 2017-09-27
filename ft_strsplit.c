@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 #include <stdio.h>
 
 static void			dynamic_resize(size_t **ptr, size_t *current_size)

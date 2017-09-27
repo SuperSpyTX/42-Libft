@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 #include <stdio.h>
 
 static int			is_special_whitespace(const char c)

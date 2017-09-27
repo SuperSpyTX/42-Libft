@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 #include <stdio.h>
 
 char				*ft_strstr(const char *big, const char *little)

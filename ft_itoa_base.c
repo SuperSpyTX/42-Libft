@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
 static char			*ft_putnum(int num, int base, char *buf, int *size)
 {
