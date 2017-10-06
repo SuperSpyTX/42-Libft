@@ -101,7 +101,7 @@ $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
-clean:
+cleean:
 	/bin/rm -f $(OBJ)
 
 fclean: clean
