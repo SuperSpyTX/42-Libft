@@ -12,7 +12,6 @@
 
 #include "ft_printf.h"
 
-t_module				*g_modules;
 
 void					module_init(void)
 {

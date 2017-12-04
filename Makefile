@@ -6,7 +6,7 @@
 #*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 #*                                                +#+#+#+#+#+   +#+           */
 #*   Created: 2017/04/18 03:42:42 by jkrause           #+#    #+#             */
-#*   Updated: 2017/09/15 01:55:35 by jkrause          ###   ########.fr       *#
+#*   Updated: 2017/06/11 02:45:14 by jkrause          ###   ########.fr       */
 #*                                                                            */
 #* ************************************************************************** */
 # ----------------- Version 1.5 --------------------- #
@@ -83,6 +83,7 @@ standard_functions/ft_strchr.c \
 standard_functions/ft_ishex.c \
 expand_functions/expand_write.c \
 expand_functions/expand_pad.c \
+expand_functions/expand_get_next_line_until.c \
 printf_functions/ft_printf.c \
 printf_functions/modules/parse_module.c \
 printf_functions/modules/string_module.c \
@@ -90,6 +91,7 @@ printf_functions/modules/bufferwrite_module.c \
 printf_functions/modules/asterisks_module.c \
 printf_functions/modules/integer_module.c \
 printf_functions/modules/format_module.c \
+printf_functions/modules/bufferstring_module.c \
 printf_functions/modules/memorywrite_module.c \
 printf_functions/module_manager.c \
 
@@ -106,7 +108,7 @@ $(LIBFT_NAME): $(LIBFT_OBJ)
 	/bin/rm -f $(LIBFT_NAME)
 	ar rcs $(LIBFT_NAME) $(LIBFT_OBJ)
 
-re: clean all
+re: clean all 
 
 clean:
 	/bin/rm -f $(LIBFT_OBJ)
