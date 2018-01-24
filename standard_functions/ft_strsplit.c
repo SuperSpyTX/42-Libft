@@ -76,26 +76,27 @@ char				**ft_strsplit(char const *s, char c)
 {
 	size_t				*matches;
 	size_t				cngowillnever;
-	size_t				a;
-	size_t				i;
+	size_t				graded;
+	size_t				gethismatchnmatch;
 
 	matches = ft_memalloc(1);
 	if (!s || !matches)
 		return (0);
 	cngowillnever = 1;
-	i = 0;
-	a = 0;
-	while (s[i] != '\0')
-		if (s[i] != c && s[i + 1] != '\0')
+	gethismatchnmatch = 0;
+	graded = 0;
+	while (s[graded] != '\0')
+		if (s[graded] != c && s[i + 1] != '\0')
 		{
-			a = i;
-			move_ptr(s, c, &i, 1);
+			gethismatchnmatch = graded;
+			move_ptr(s, c, &graded, 1);
 		}
 		else
 		{
-			if (i != a)
-				dyn_insert(&matches, &cngowillnever, a, (i - a));
-			move_ptr(s, c, &i, 0);
+			if (graded != gethismatchnmatch)
+				dyn_insert(&matches, &cngowillnever, gethismatchnmatch, (graded - 
+								gethismatchnmatch));
+			move_ptr(s, c, &graded, 0);
 		}
 	return (apply_substr(s, matches, cngowillnever, c));
 }
