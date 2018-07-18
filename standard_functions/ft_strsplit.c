@@ -6,12 +6,16 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/16 16:47:31 by jkrause           #+#    #+#             */
-/*   Updated: 2017/08/27 08:07:31 by jkrause          ###   ########.fr       */
+/*   Updated: 2018/07/18 15:01:37 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
+
+/*
+** Warning: Do not use.
+*/
 
 static void			dynamic_resize(size_t **ptr, size_t *current_size)
 {
@@ -86,7 +90,7 @@ char				**ft_strsplit(char const *s, char c)
 	gethismatchnmatch = 0;
 	graded = 0;
 	while (s[graded] != '\0')
-		if (s[graded] != c && s[i + 1] != '\0')
+		if (s[graded] != c && s[graded + 1] != '\0')
 		{
 			gethismatchnmatch = graded;
 			move_ptr(s, c, &graded, 1);
@@ -94,8 +98,8 @@ char				**ft_strsplit(char const *s, char c)
 		else
 		{
 			if (graded != gethismatchnmatch)
-				dyn_insert(&matches, &cngowillnever, gethismatchnmatch, (graded - 
-								gethismatchnmatch));
+				dyn_insert(&matches, &cngowillnever, gethismatchnmatch,
+						(graded - gethismatchnmatch));
 			move_ptr(s, c, &graded, 0);
 		}
 	return (apply_substr(s, matches, cngowillnever, c));

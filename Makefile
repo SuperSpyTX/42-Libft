@@ -86,6 +86,8 @@ expand_functions/expand_pad.c \
 expand_functions/expand_get_next_line_until.c \
 printf_functions/ft_printf.c \
 printf_functions/modules/parse_module.c \
+printf_functions/modules/formati_module.c \
+printf_functions/modules/directbuffer_module.c \
 printf_functions/modules/string_module.c \
 printf_functions/modules/bufferwrite_module.c \
 printf_functions/modules/asterisks_module.c \
@@ -94,6 +96,7 @@ printf_functions/modules/format_module.c \
 printf_functions/modules/bufferstring_module.c \
 printf_functions/modules/memorywrite_module.c \
 printf_functions/module_manager.c \
+printf_functions/ft_snprintf.c \
 
 LIBFT_OBJ = $(subst .c,.o, $(LIBFT_SRC))
 
